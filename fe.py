@@ -60,9 +60,9 @@ def list(root=defaultroot):
                             deserialized = json.loads(node)
                         except ValueError as e:
                             deserialized = {}
-                        task_params =deserialized.get('params', {})
+                        params =deserialized.get('params', {})
 
-                        final = dict(deserialized.items() + [(x,y[0]) for x,y in task_params.items()])
+                        final = dict(deserialized.items() + [(x,y[0]) for x,y in params.items()])
                         show = True
                         for x,y in params.items():
                             if final.get(x,0) and (final[x] != y):
